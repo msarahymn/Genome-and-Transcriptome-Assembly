@@ -2,13 +2,12 @@
 
 # 00_link_raw_data.sh
 # Purpose: Create symlinks to raw data for the assembly annotation course
-# Author: Maisyaroh
 
 
-# ---- Variables ----
-USERNAME="mmaisyaroh"                     
+
+                  
 ACCESSION="Hiroshima"                    
-WORKDIR="/data/users/${USERNAME}/assembly_course"
+WORKDIR="/data/users/mmaisyaroh/assembly_course"
 RAWDATA="/data/courses/assembly-annotation-course/raw_data"
 
 # ---- Go to working directory ----
