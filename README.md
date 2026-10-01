@@ -8,6 +8,7 @@ The data used in this project come from Lian et al. (2024).
 Sample	Data type	Sequencing	SRA accession
 - Hiroshima	Genomic DNA	PacBio HiFi	ERR11437318
 - Sha	RNA-seq	Illumina (paired-end)	ERR754081
+
 Reference: Lian, Q. et al. (2024). A pan-genome of 69 Arabidopsis thaliana accessions reveals a conserved genome structure throughout the global species range. Nature Genetics, 56, 982–991.
 
 
