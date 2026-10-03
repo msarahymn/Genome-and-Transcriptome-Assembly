@@ -18,27 +18,27 @@ CONTAINER="/containers/apptainer/merqury_1.3.sif"
 
 
 
-# PacBio HiFi reads (the same file you used for flye / hifiasm / LJA) -> CHECK THIS PATH
+# PacBio HiFi reads
 READS="/data/users/mmaisyaroh/assembly_course/Hiroshima/ERR11437318.fastq.gz"
 
 FLYE="${in_flye_dir}/assembly.fasta"
 HIFIASM="${in_hifiasm_dir}/Hiroshima_hifiasm.fa"
 LJA="${in_lja_dir}/assembly.fasta"
 
-# required by the exercise (apptainer passes it into the container)
+
 export MERQURY="/usr/local/share/merqury"
 
 
 mkdir -p "${out_dir}"
 cd "${out_dir}"
 
-# 1) best k-mer size for genome size ~135 Mb (prints ~18.5 -> we use k=19)
+# 1) best k-mer size for genome size ~135 Mb (
 apptainer exec --bind /data ${CONTAINER} sh $MERQURY/best_k.sh 135000000
 
 # 2) build the k-mer database from the HiFi reads
 apptainer exec --bind /data ${CONTAINER} meryl k=19 count threads=16 memory=60 output ${out_dir}/hifi.meryl ${READS}
 
-# 3) run merqury on each assembly, each in its own folder
+# 3) run merqury on each assembly
 mkdir -p ${out_dir}/flye ${out_dir}/hifiasm ${out_dir}/lja
 
 cd ${out_dir}/flye
