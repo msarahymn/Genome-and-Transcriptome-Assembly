@@ -32,7 +32,7 @@ cd "${out_dir}"
 # 1) WITHOUT reference 
 apptainer exec --bind /data ${CONTAINER} quast.py ${FLYE} ${HIFIASM} ${LJA} --labels flye,hifiasm,lja --eukaryote --large --est-ref-size 135000000 --threads 16 -o ${out_dir}/no_reference
  
-# 2) WITH reference + gene annotation
+# 2) WITH reference
 apptainer exec --bind /data ${CONTAINER} quast.py ${FLYE} ${HIFIASM} ${LJA} --labels flye,hifiasm,lja --eukaryote --large -r ${REF} --features gene:${ANOT} --threads 16 -o ${out_dir}/with_reference
 
 
